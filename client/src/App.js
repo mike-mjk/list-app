@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import First from './first.js';
+import First from './first';
+import Hello from './hello';
 
 class App extends Component {
   render() {
     return (
-      <First />
+      <div>
+        <First />
+        <Hello compiler='J' framework='A'/>
+      </div>
     );
   }
 }
