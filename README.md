@@ -6,7 +6,7 @@ Thanks for checking out the readme!
 
 ### It's built with Firebase and TypeScript, which I had never used before this.
 
-The hardest part about working with TypeScript for this app was figuring out what the event type for the event argument in my Input component. The error message wasn't totally helpful, but through some google searches I was able to figure out to assign it to this: React.SyntheticEvent<HTMLFormElement>
+It was cool to work with TypeScript for the first time. The hardest part about working with TypeScript for this app was figuring out to assign the event argument in my Input component to React.SyntheticEvent<HTMLFormElement>.
 
 ### Attention to detail.
 
