@@ -20,13 +20,15 @@ export class Input extends React.Component<Props, IInputState> {
 
 	handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
 		event.preventDefault();
-		console.log(this.state.term);
-		ref.push(this.state.term);
+		if (this.state.term) {
+			ref.push(this.state.term);
+		}
+		this.setState({ term: '' })
 	}
   render() {
       return (
-      	<form onSubmit={this.handleSubmit}>
-      		<input onChange={event => this.setState({ term: event.target.value })} />
+      	<form className="col s12" onSubmit={this.handleSubmit}>
+      		<input value={this.state.term} onChange={event => this.setState({ term: event.target.value })} />
       	</form>
       )
   }

@@ -46,9 +46,11 @@
     "whatwg-fetch": "2.0.2"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.0",
     "@types/lodash": "^4.14.71",
     "@types/react": "^15.0.38",
     "@types/react-dom": "^15.5.1",
+    "classnames": "^2.2.5",
     "firebase": "^4.1.3",
     "lodash": "^4.17.4",
     "materialize-css": "^0.100.1",

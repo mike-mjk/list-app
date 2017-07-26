@@ -17,7 +17,7 @@ export class List extends React.Component<Props, IListState> {
 	constructor(props: Props) {
 		super(props);
 
-		this.state = { items: [] }
+		this.state = { items: null }
 	}
 
 	componentDidMount() {
@@ -30,24 +30,31 @@ export class List extends React.Component<Props, IListState> {
 	}
 
 	remove(key: string) {
-		// console.log(key);
 		ref.child(key).remove();
-		// console.log(ref.getKey());
 	}
 
 	renderItems() {
 		let { items } = this.state;
-		return _.map(items, (item, key: string) => {
+		if (!items) {
+			return null
+		}
+		let stuff = _.map(items, (item, key: string) => {
 			console.log('key', key);
 			return <ListItem remove={() => this.remove(key)} key={key} item={item} />
 		})
+		return <ul className="collection">{stuff}</ul>
 	}
 
   render() {
     return (
-    	<div>
-    		<Input />
-    		{this.renderItems()}
+    	<div className="container">
+    		<div className="row">
+    			<div className="col xl6 offset-xl3 l8 offset-l2 m10 offset-m1 s12  box dark-primary-color">
+    				<h2>To-Do List</h2>
+		    		<Input />
+		    		{this.renderItems()}
+    			</div>
+    		</div>
     	</div>
     )
   }

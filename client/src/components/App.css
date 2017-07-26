@@ -1,0 +1,73 @@
+body {
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/mooning.png");
+  font-size: 22px;
+}
+li {
+  list-style: none;
+  padding-left: 40px !important;
+  display: block;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+i {
+  vertical-align: middle !important;
+  font-size: 22px !important;
+  position: absolute;  
+  cursor: pointer;
+}
+
+i.checkbox, i.check {
+  left: 10px;
+}
+
+i.trash {
+  display: none !important;
+  margin-left: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+li:hover i.trash {
+  /*position: absolute;*/
+  display: inline-block !important;
+}
+
+input {
+  color: white;
+  font-size: 120% !important;
+  font-family: 'Lato', sans-serif;
+
+}
+.list {
+  background: #fff;
+  border-radius: 3px;
+  margin: 15px 0;
+}
+
+.box {
+  margin-top: 50px;
+  border-radius: 3px;
+}
+
+.box h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #607D8B; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }

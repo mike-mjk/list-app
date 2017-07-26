@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { List } from './list';
-// import { Hello } from './hello';
+import './App.css'
 
 class App extends React.Component {
   render() {

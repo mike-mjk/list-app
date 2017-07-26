@@ -3,7 +3,6 @@
 
   class First extends Component {
   	render() {
-  		console.log('firebase', firebase);
   		return <div> Hi </div>
   	}
   }
