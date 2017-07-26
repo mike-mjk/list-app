@@ -19,3 +19,5 @@ Obviously, this is just a simple To-Do List app, but there are a few design elem
 3. For items that go beyond one line the checkbox stays vertically centered.
 
 4. It is responsive for all device widths.
+
+5. EASTER EGGS. Did you try deleting the interview?
