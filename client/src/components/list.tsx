@@ -47,22 +47,24 @@ export class List extends React.Component<Props, IListState> {
 
   render() {
     return (
-    	<div className="container">
-    		<div className="row">
-    			<div className="col xl6 offset-xl3 l8 offset-l2 m10 offset-m1 s12  box dark-primary-color">
-    				<h2>To-Do List</h2>
-		    		<Input />
-		    		{this.renderItems()}
-    			</div>
-    		</div>
-    		<footer>
-    			<div>Dominic, check out the ReadMe.</div>
-    			<div>
+    	<div>
+	    	<div className="container">
+	    		<div className="row">
+	    			<div className="col xl6 offset-xl3 l8 offset-l2 m10 offset-m1 s12  box dark-primary-color">
+	    				<h2>To-Do List</h2>
+			    		<Input />
+			    		{this.renderItems()}
+	    			</div>
+	    		</div>
+	    	</div>
+	  		<footer>
+	  			<div>Dominic, check out the ReadMe.</div>
+	  			<div>
 	    			<a href="https://github.com/mike-mjk/list-app" target="_blank">
 	    				<i className="fa fa-github fa-lg github" aria-hidden="true"></i>
 	    			</a>
-    			</div>
-    		</footer>
+	  			</div>
+	  		</footer>
     	</div>
     )
   }
