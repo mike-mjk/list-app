@@ -31,7 +31,7 @@ export class List extends React.Component<Props, IListState> {
 
 	remove(key: string) {
 		if(key === '-Kq-oBNM04vEMVJrZPBR' || key === '-Kq-oDsnA3XxHSxYT_Dw') {
-			alert("Whoa, there! Don't delete this one until you have done it! Try adding something else if you want to test the delete functionality");
+			alert("Whoa, there! Don't delete this one until you have done it! Try adding something else if you want to test the delete functionality.");
 		}
 		else {
 			console.log('key', key, typeof key)
