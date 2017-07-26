@@ -28,7 +28,7 @@ export class Input extends React.Component<Props, IInputState> {
   render() {
       return (
       	<form className="col s12" onSubmit={this.handleSubmit}>
-      		<input value={this.state.term} onChange={event => this.setState({ term: event.target.value })} />
+      		<input placeholder="Add Item" value={this.state.term} onChange={event => this.setState({ term: event.target.value })} />
       	</form>
       )
   }

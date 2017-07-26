@@ -6,6 +6,7 @@ li {
   list-style: none;
   padding-left: 40px !important;
   display: block;
+  position: relative;
 }
 
 .line-through {
@@ -13,10 +14,12 @@ li {
 }
 
 i {
-  vertical-align: middle !important;
+  /*vertical-align: middle !important;*/
   font-size: 22px !important;
-  position: absolute;  
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 i.checkbox, i.check {
@@ -41,7 +44,10 @@ input {
   color: white;
   font-size: 120% !important;
   font-family: 'Lato', sans-serif;
+}
 
+input::placeholder {
+  font-size: 14px !important;
 }
 .list {
   background: #fff;
@@ -62,6 +68,28 @@ input {
   color: #fff;
 }
 
+footer {
+  font-size: 20px !important;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*padding: 1rem;*/
+  background-color: #efefef;
+  text-align: center;
+}
+
+i.github {
+  color: #757575;
+  position: relative;
+  font-size: 35px !important;
+  top: 15px;
+  margin-bottom: 12px;
+}
+
+i.github:hover {
+  color: #1976D2;
+}
 
 .dark-primary-color    { background: #1976D2; }
 .default-primary-color { background: #2196F3; }

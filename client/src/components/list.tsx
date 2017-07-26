@@ -55,6 +55,14 @@ export class List extends React.Component<Props, IListState> {
 		    		{this.renderItems()}
     			</div>
     		</div>
+    		<footer>
+    			<div>Dominic, check out the ReadMe.</div>
+    			<div>
+	    			<a href="https://github.com/mike-mjk/list-app" target="_blank">
+	    				<i className="fa fa-github fa-lg github" aria-hidden="true"></i>
+	    			</a>
+    			</div>
+    		</footer>
     	</div>
     )
   }
