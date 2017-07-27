@@ -6,7 +6,13 @@ Thanks for checking out the readme!
 
 ### It's built with Firebase and TypeScript, which I had never used before this.
 
-It was cool to work with TypeScript for the first time. The hardest part about working with TypeScript for this app was figuring out to assign the event argument in my Input component to React.SyntheticEvent<HTMLFormElement>.
+It was cool to work with TypeScript for the first time. There were a few interesting bits in figuring out TypeScript.
+
+1. Figuring out that the event argument in my SubmitHandler needed to be of type React.SyntheticEvent<HTMLFormElement> was my first TypeScript difficulty. I solved it with some Google searches.
+
+2. I used the react-modal package (Have you found the modal, yet?) which has problems with the type definition so I had to modify directly. https://stackoverflowfeeds.blogspot.com/2017/06/solved-typescript-problems-importing.html
+
+3. But modifying that directly caused a problem when pushing to heroku because heroku uses the unmodified version. So I had to figure out how declare the module manually.
 
 ### Attention to detail.
 
