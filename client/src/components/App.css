@@ -1,42 +1,61 @@
 body {
   background: url("https://www.toptal.com/designers/subtlepatterns/patterns/mooning.png");
   font-size: 22px;
+}
+
+html, body {
   height: 100%;
 }
 
+
 .container {
   min-height: 100vh;
-  margin-bottom: -71px ;
-  padding-bottom: 71px;
-
+  margin-bottom: -80px ;
+  padding-bottom: 80px;
 }
+
+.container:after {
+  content: "";
+  display: block;
+}
+
+footer {
+  height: 80px;
+  font-size: 20px !important;
+  margin: auto;
+  width: 100%;
+  background-color: #efefef;
+  text-align: center;
+}
+
 
 li {
   list-style: none;
   padding-left: 40px !important;
   display: block;
   position: relative;
+  line-height: 1.5em !important;
 }
 
 .line-through {
   text-decoration: line-through;
 }
 
-i {
-  /*vertical-align: middle !important;*/
+i.checkbox, i.check {
   font-size: 22px !important;
   cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  left: 10px;
 }
 
 i.checkbox, i.check {
-  left: 10px;
 }
 
 i.trash {
   display: none !important;
+  cursor: pointer;
   margin-left: 5px;
 }
 
@@ -46,7 +65,10 @@ i.trash {
 
 li:hover i.trash {
   /*position: absolute;*/
+  position: relative;
+  top: 4px;
   display: inline-block !important;
+  color: inherit;
 }
 
 input {
@@ -77,23 +99,14 @@ input::placeholder {
   color: #fff;
 }
 
-footer {
-  font-size: 20px !important;
-  /*position: fixed;*/
-  /*bottom:0;*/
-  margin: auto;
-  width: 100%;
-  /*padding: 1rem;*/
-  background-color: #efefef;
-  text-align: center;
-}
+
 
 i.github {
   color: #757575;
   position: relative;
   font-size: 35px !important;
   top: 15px;
-  margin-bottom: 12px;
+  /*margin-bottom: 12px;*/
 }
 
 i.github:hover {
