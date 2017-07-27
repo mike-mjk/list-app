@@ -4,6 +4,7 @@ import firebase from '../firebase';
 import { Input } from './input';
 import ListItem from './list-item';
 import * as _ from 'lodash';
+import ReactModal from 'react-modal';
 
 let database = firebase.database();
 let ref = database.ref('things');
@@ -13,12 +14,42 @@ interface Props {
 
 }
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 export class List extends React.Component<Props, IListState> {
 	constructor(props: Props) {
 		super(props);
+		console.log('modal', ReactModal)
+		this.state = { 
+			items: null,
+			modalIsOpen: false
+		}
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
 
-		this.state = { items: null }
 	}
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+ 
+  afterOpenModal() {
+    // references are now sync'd and can be accessed. 
+  }
+ 
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
 
 	componentDidMount() {
 		ref.on('value', snapshot => {
@@ -31,7 +62,8 @@ export class List extends React.Component<Props, IListState> {
 
 	remove(key: string) {
 		if(key === '-Kq-oBNM04vEMVJrZPBR' || key === '-Kq-oDsnA3XxHSxYT_Dw') {
-			alert("Whoa, there! Don't delete this one until you have done it! Try adding something else if you want to test the delete functionality.");
+			// alert("Whoa, there! Don't delete this one until you have done it! Try adding something else if you want to test the delete functionality.");
+			this.openModal();
 		}
 		else {
 			console.log('key', key, typeof key)
@@ -63,6 +95,22 @@ export class List extends React.Component<Props, IListState> {
 	    			</div>
 	    		</div>
 	    	</div>
+        <ReactModal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+ 
+          <h2>Oh No! You've made a mistake!</h2>
+          <div>Don't delete this item until you have done it.</div>
+					<div style={{width:'100%', height:'0', paddingBottom:'75%', position:'relative'}}><iframe src="https://giphy.com/embed/3oEhmK0nn0gbplhY6Q" width="100%" height="100%" style={{position:'absolute'}} frameBorder="0" className="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/3oEhmK0nn0gbplhY6Q">via GIPHY</a></p>
+          <button onClick={this.closeModal}>close</button>
+        </ReactModal>
+ 
+
+
 	  		<footer>
 	  			<div>Dominic, check out the ReadMe.</div>
 	  			<div>
@@ -75,3 +123,15 @@ export class List extends React.Component<Props, IListState> {
     )
   }
 }
+       // <Modal
+       //    isOpen={this.state.modalIsOpen}
+       //    onAfterOpen={this.afterOpenModal}
+       //    onRequestClose={this.closeModal}
+       //    style={customStyles}
+       //    contentLabel="Example Modal"
+       //  >
+ 
+       //    <h2>Hello</h2>
+       //    <button onClick={this.closeModal}>close</button>
+       //    <div>I am a modal</div>
+       //  </Modal>

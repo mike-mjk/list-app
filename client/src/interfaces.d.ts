@@ -3,7 +3,8 @@ interface IInputState {
 }
 
 interface IListState {
-	items: Array<string>
+	items: Array<string>,
+	modalIsOpen: boolean
 }
 
 interface IListItemState {
